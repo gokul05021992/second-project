@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+ <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Employee Database</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href='create'>Add Employee</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+ <br>
+ <center><h2>employee details</h2></center>
+ <div class="container">
+     <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">name</th>
+      <th scope="col">email</th>
+      <th scope="col">address</th>
+      <th scope="col">jobrole</th>
+      <th scope="col">operations</th>
+    </tr>
+  </thead>
+  <tbody>
+         {%for i in data%}
+    <tr>
+      <th scope="row">{{1}}</th>
+      <td>{{i.name}}</td>
+      <td>{{i.email}}</td>
+      <td>{{i.address}}</td>
+      <td>{{i.jobrole}}</td>
+      <td>
+          <button class="btn btn-success"><a href="update/{{i.id}}">update</a></button>
+          <button class="btn btn-danger"><a href="delete/{{i.id}}">delete</a></button>
+      </td>
+    </tr>
+       {%endfor%}
+</table>
+ </div>
+</body>
+</html>
